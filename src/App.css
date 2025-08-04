@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+
+.MainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.NavBar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    box-shadow: 0 1px 5px hsl(0, 0%, 87%);
+    background-color: hsl(0, 0%, 100%);
+    z-index: 1;
+
+}
+
+
+.NavBar span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.themeMode {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.themeMode span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.NavBar.darkMode {
+    background-color: hsl(209, 23%, 22%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    box-shadow: 0 1px 5px hsl(207, 26%, 17%);
+    z-index: 1;
+}
+
+.NavBar.darkMode span {
+    color: hsl(0, 0%, 98%);
+}
+
+.NavBar.darkMode .themeMode svg {
+    fill: hsl(0, 0%, 98%);
+}
+
+.countriesContianer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.container {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.searachFilterDiv {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.countrySearchDiv {
+    width: 30%;
+    height: 100%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 0 5px hsl(0, 1%, 79%);
+    padding: 0px 20px;
+    gap: 10px;
+}
+
+.searachFilterDiv.darkMode .countrySearchDiv {
+    width: 30%;
+    height: 100%;
+    background-color: hsl(209, 23%, 22%);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 0 5px hsl(207, 26%, 17%);
+    padding: 0px 20px;
+    gap: 10px;
+}
+
+.countrySearchDiv img {
+    width: 16px;
+    height: 16px;
+}
+
+.countrySearchDiv input {
+    flex: 1;
+    height: 100%;
+    padding: 0px 10px;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(200, 15%, 8%);
+}
+
+.searachFilterDiv.darkMode .countrySearchDiv input {
+    flex: 1;
+    height: 100%;
+    padding: 0px 10px;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    background-color: inherit;
+}
+
+.countrySearchDiv input::placeholder {
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(0, 0%, 64%);
+}
+
+.searachFilterDiv.darkMode .countrySearchDiv input::placeholder {
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(0, 0%, 89%);
+}
+
+.countryFilterDiv {
+    width: 15%;
+    height: 100%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    box-shadow: 0 0 5px hsl(0, 1%, 79%);
+    position: relative;
+    font-size: 17px;
+
+}
+
+.darkMode .countryFilterDiv {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 0 5px hsl(207, 26%, 17%);
+}
+
+.countryFilterDiv label {
+    width: 60%;
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(200, 15%, 8%);
+    z-index: 1;
+}
+
+.darkMode .countryFilterDiv label {
+    color: hsl(0, 0%, 89%);
+}
+
+.darkMode .countryFilterDiv i {
+    color: hsl(0, 0%, 89%);
+}
+
+.countryFilterDiv select {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    outline: 0;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.darkMode .countryFilterDiv option {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 89%);
+    border: 0;
+}
+
+.coutriesList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 52px;
+}
+
+.coutryDiv {
+    width: 220px;
+    height:290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 10px #ececec;
+    cursor: pointer;
+}
+
+.darkMode .coutryDiv {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 0 10px hsl(207, 26%, 17%);
+}
+
+.coutryDiv img {
+    width: 100%;
+    height: 180px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.coutryDiv .countryDetailsDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.coutryDiv .countryDetailsDiv span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1b1d1f;
+}
+
+.darkMode .coutryDiv .countryDetailsDiv span {
+    color: hsl(0, 0%, 89%);
+}
+
+.coutryDiv .countryDetailsDiv .countryDetails p span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #313133;
+}
+
+.darkMode .coutryDiv .countryDetailsDiv .countryDetails p span {
+    color: hsl(0, 0%, 75%);
+}
+
+.coutryDiv .countryDetailsDiv .countryDetails p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8d8d8d;
+}
+
+.darkMode .coutryDiv .countryDetailsDiv .countryDetails p {
+    color: hsl(0, 0%, 66%);
+}
+
+/********************* Single country details styling  ************************/
+
+.singleContainer {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.goBackBtn {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 5px #b3b3b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.darkTheme .goBackBtn{
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 0 5px hsl(200, 15%, 12%);
+    color: hsl(0, 0%, 100%);
+}
+
+.darkTheme .goBackBtn span svg path {
+    stroke: hsl(0, 0%, 100%);
+}
+.goBackBtn p {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.goBackBtn span {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.countryInfo{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 40px; */
+
+}
+
+.countryInfo .countryFlagImg{
+    width: 50%;
+    height: 100%;
+}
+.countryInfo .countryFlagImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.countryInfo  .countryInfoDetails{
+    width: 40%;
+    height: 100%;
+}
+
+.countryTopDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* align-items: start; */
+    justify-content: center;
+}
+
+.countryTopDiv .firstDiv{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.darkTheme .countryTopDiv .firstDiv{
+    color: hsl(0, 0%, 100%);
+}
+
+.secondDiv{
+    width: 100%;
+    display: flex;
+    /* gap: 100px; */
+    justify-content: space-between;
+}
+
+.secondDiv .leftDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.secondDiv .leftDiv span{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.darkTheme .secondDiv .leftDiv span{
+    color: hsl(0, 0%, 92%);
+}
+.secondDiv .leftDiv p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.darkTheme .secondDiv .leftDiv p{
+    color: hsl(0, 0%, 87%);
+}
+
+.secondDiv .rightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.secondDiv .rightDiv span{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.darkTheme .secondDiv .rightDiv span{
+    color: hsl(0, 0%, 92%);
+}
+.secondDiv .rightDiv p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.darkTheme  .secondDiv .rightDiv p{
+    color: hsl(0, 0%, 87%);
+}
+
+.borderDiv{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.borderDiv span{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.darkTheme  .borderDiv span{
+    color: hsl(0, 0%, 92%);
+}
+.borderDiv .borders{
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.borderDiv .borders button{
+    padding: 8px;
+    background-color: inherit;
+    border: 0;
+    box-shadow: 0 0 5px #b3b3b3;
+    border-radius: 5px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.darkTheme  .borderDiv .borders button{
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 87%);
+    box-shadow: 0 0 5px hsl(200, 15%, 12%);
+}
+
+
+ 
